@@ -1,0 +1,175 @@
+<%- include('header') -%>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial;
+      padding: 10px;
+      background: black;
+    }
+    #name{
+        color: white;
+    }
+    /* Header/Blog Title */
+    .header {
+      background-image: url('assets/background_png.png');
+      padding: 30px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 50px;
+      color: white;
+    }
+    
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+    }
+    
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      background-color: black;
+      padding-left: 20px;
+    }
+    
+    /* Fake image */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+    
+    /* Add a card effect for articles */
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+    
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+    
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
+    </style>
+    <div class="header">
+        <h1>DEPARTMENT OF MATHEMATICS</h1>
+        <p id="name">ANNA UNIVERSITY</p>
+    </div>
+      
+      <div class="topnav">
+        <a href="hod_login">HOD LOGIN</a>
+        <a href="faculty_login">FACULTY LOGIN</a>
+        <a href="faculty">FACULTY</a>
+        <a href="hod">HOD</a>
+        <a href="/register" style="float:right">REGISTER FACULTY</a>
+      </div>
+      
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h2>About the Department of Mathematics</h2>
+            <br>
+            <p>The Department of Mathematics is one of the largest units of Anna University with faculty strength of 70 to cater the needs of the Under-Graduate and Post-Graduate programmes in Science, Engineering and Technology. The Department has been started in the year 1975 with M.Sc. programme in Mathematics. In 1979, research programmes were started which are leading to M.Phil, and Ph.D. in Mathematics. Subsequently in the year 1993, it has started M.Sc. Mathematics with Diversification in Computer Science, which was renamed as M.Sc. (Computer Science) in 1997. From the academic year 2001, Five-year Integrated M.Sc Programmes in Computer Science and Information Technology are being offered. These two programmes are successfully offering by the Department of Mathematics and most of the students are placed in IT companies across the world.
+               <br> <br> The Department of Mathematics is recognized as DST - FIST sponsored Department in Anna University. The Department of Mathematics has been sanctioned Rs.52 Lakhs for five years by the Department Science and Technology from 21.05.2014</p>
+          </div>
+          <div class="card">
+            <h2>The objectives of the Department</h2>
+            <p>To provide strong Mathematical background to Engineering Graduates to cope up with the needs of emerging technology at National and International levels.</p>
+            <ul>
+            <li>To provide strong mathematical foundation, analytical and computational skills and abstract understanding to young post graduate Mathematics students which enable them to handle any industrial and research problems.</li>
+            <li>To promote high quality research in pure and applied Mathematics in the diversified areas thereby creating opportunities for the young researchers to contribute significantly in the frontier areas of Mathematics.</li>
+            <li>To provide good ambience for the faculty members to enhance interdisciplinary and advanced research through effective collaborations across the globe.</li>
+            <li>To enhance the computational facilities to suit the needs of faculty members and research scholars working on research areas such as CFD, Applied Probability & Statistics, Complex Analysis & Fuzzy Logic and Graph Algorithm.</li>
+            <li>To provide basic and advanced skills to students in Computer Science & Information Technology enabling self-reliance and excellence in capabilities.</li>
+            <li>To enable students to play vital roles in the fields of Computer Science and Mathematics at the local level and to remain globally competitive.</li>
+            <li>To create computer software and mathematical modeling to cater to the growing needs of Industries/Research establishments.</li>
+            <li>To undertake significant research projects individually and in collaboration with other Departments / Institutions / Industries.</li>
+            <li>To popularize and project in proper perspective the scope of Mathematics and Computer Science so as to attract young talents to take up teaching and research career in Computer and Mathematical Sciences.</li>
+            </ul>
+        </div>
+        </div>
+        <div class="rightcolumn">
+          <div class="card">
+            <h2>Programmes Offered</h2>
+            <p>The Department offers the following Post-Graduate Programmes:</p>
+            <ul>
+                <li>M.Sc. (Applied Mathematics)</li>
+                <li>M.Sc. 5 years Integrated (Computer Science)</li>
+                <li>M.Sc. 5 years Integrated (Information Technology)</li>
+                <li>M.Phil (Mathematics)</li>
+                <li>Ph.D</li>
+            </ul>
+            <p>Also the Department offers need based Mathematics courses to the following Under-graduate and Post-graduate programmes:</p>
+            <ul>
+                <li>B.E. / B.Tech. (Full time and Part time)</li>
+                <li>M.E./M.Tech. (Full time and Part time)</li>
+                <li>B.Arch</li>
+                <li>M.C.A. (Day / Evening)</li>
+                <li>M.S (By research)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Contact Us</h3>
+            <address>Department of Mathematics,<br> Anna University,<br> Kotturpuram,<br> Chennai-600025</address>
+            <a href="tel:044-22358507">044-22358507</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <h5>© 2022. Anna University. All Right Reserved</h5>
+      </div>
+<%- include('footer') -%>

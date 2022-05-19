@@ -1,0 +1,87 @@
+
+// R19 FC_PCC_EEC table creation
+CREATE TABLE IF NOT EXISTS "DOM".r19_fc_pcc_eec
+(
+    subject_code character varying COLLATE pg_catalog."default" NOT NULL,
+    subject_name character varying COLLATE pg_catalog."default",
+    credits integer,
+    semester integer,
+    subject_type character varying COLLATE pg_catalog."default",
+    category character varying COLLATE pg_catalog."default",
+    branch character varying COLLATE pg_catalog."default",
+    CONSTRAINT r19_fc_pcc_eec_pkey PRIMARY KEY (subject_code)
+)
+
+// R19 PEC_OEC table creation
+CREATE TABLE IF NOT EXISTS "DOM".r19_pec_oec
+(
+    subject_code character varying COLLATE pg_catalog."default" NOT NULL,
+    subject_name character varying COLLATE pg_catalog."default",
+    credit integer,
+    semester integer,
+    subject_type character varying COLLATE pg_catalog."default",
+    category character varying COLLATE pg_catalog."default",
+    elective_type integer,
+    CONSTRAINT r19_pec_oec_pkey PRIMARY KEY (subject_code)
+)
+
+//faculty_detail
+CREATE TABLE IF NOT EXISTS "DOM".faculty_detail
+(
+    faculty_id character varying COLLATE pg_catalog."default" NOT NULL,
+    faculty_name character varying COLLATE pg_catalog."default",
+    faculty_position character varying COLLATE pg_catalog."default",
+    faculty_password character varying COLLATE pg_catalog."default",
+    faculty_email character varying COLLATE pg_catalog."default",
+    CONSTRAINT faculty_detail_pkey PRIMARY KEY (faculty_id)
+)
+
+//faculty_known_subject inherited from faculty_detail
+
+<div class="text-center center-div" id="hod_login">
+
+    <div class="container w-25 border py-5">
+        <div class="tile pb-5">
+            <h2 class="font-weight-bold">HOD LOGIN</h2>
+            <span>log in for the existing user</span>
+        </div>
+        <form action="#">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="email" name="email">
+                <small class="form-text text-muted text-left">Register email address</small>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="password">
+            </div>
+            <button type="submit" class="btn btn-success rounded-pill">Submit</button> 
+        </form>
+    </div>
+
+</div>
+
+
+app.post("/faculty_login", (req,res) =>{
+    try {
+        const user = req.body;
+        var id = Math.floor(Math.random() * 101);
+        id = "DOM2022" + id;
+        let insertQuery = `INSERT INTO "DOM".faculty_detail(
+            faculty_id, faculty_name, faculty_position, faculty_password, faculty_email)
+            VALUES ('${id}', '${user.username}', '${user.position}', '${user.pwd}', '${user.email}');`;
+ 
+        connection.query(insertQuery ,(err,result)=>{
+            if(!err){
+                console.log("inserted successful");
+                res.render('faculty_login',{title:"FACULTY_LOGIN"})
+            }
+            else{
+                console.log(err.message)
+            }  
+        })
+        connection.end;
+
+    } catch (err) {
+        
+    }
+
+})
